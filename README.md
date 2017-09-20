@@ -21,6 +21,6 @@
    *   пример: "I&nbsp;&nbsp;don't&nbsp;&nbsp;like/nblack&nbsp;&nbsp;&nbsp;coffee", при длине строки в 14 символов
  
  Пример использования:
- ``` var result = new Justifier.Justify("Xxx yyy 123", 20); ```
+ ``` var result = new Justifier.Justify("I don't like black coffee", 14); ```
  
  для проверки решения можно использовать тесты или консольное приложение.
