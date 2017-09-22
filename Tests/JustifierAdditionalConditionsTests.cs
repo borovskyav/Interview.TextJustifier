@@ -16,22 +16,22 @@ namespace TextJustifier.Tests
         public void TestWordsLongerThanGivenLength()
         {
             Assert.Throws<ArgumentException>(() => Justifier.Justify("Hello", 4));
-            Assert.Throws<ArgumentException>(() => Justifier.Justify("CSharp is programming language", 10));
+            Assert.Throws<ArgumentException>(() => Justifier.Justify("CSharp is a programming language", 10));
         }
 
         [Test]
         public void TestNewlines()
         {
-            Assert.AreEqual(Justifier.Justify("I don't like black coffee", 14), "I  don't  like/nblack   coffee");
-            Assert.AreEqual(Justifier.Justify("a b c d", 4), "a  b/nc  d");
-            Assert.AreEqual(Justifier.Justify("I do not play", 8), "I     do/nnot play");
-            Assert.AreEqual(Justifier.Justify("She does not play", 10), "She     do/nnot   play");
+            Assert.AreEqual("I  don't  like\nblack   coffee", Justifier.Justify("I don't like black coffee", 14));
+            Assert.AreEqual("a  b\nc  d", Justifier.Justify("a b c d", 4));
+            Assert.AreEqual("She   does\nnot   play", Justifier.Justify("She does not play", 10));
         }
 
+        [Test]
         public void TestOneWordInNewlines()
         {
-            Assert.AreEqual(Justifier.Justify("I play games", 8), "I   play/ngames   ");
-            Assert.AreEqual(Justifier.Justify("aaa bbb cccccc ddd eee", 7), "aaa bbb/nccccc  /nddd  ee");
+            Assert.AreEqual("I   play\ngames   ", Justifier.Justify("I play games", 8));
+            Assert.AreEqual("I     am\nplaying \na   game", Justifier.Justify("I am playing a game", 8));
         }
 
         private Justifier Justifier { get; set; }

@@ -15,34 +15,34 @@ namespace TextJustifier.Tests
         [Test]
         public void TestSimpleUsage()
         {
-            Assert.AreEqual(Justifier.Justify("a b c d e", 9), "a b c d e");
-            Assert.AreEqual(Justifier.Justify("I play games", 12), "I play games");
-            Assert.AreEqual(Justifier.Justify("I came here to see you", 22), "I came here to see you");
-            Assert.AreEqual(Justifier.Justify("Java was invented by Sun", 24), "Java was invented by Sun");
+            Assert.AreEqual("a b c d e", Justifier.Justify("a b c d e", 9));
+            Assert.AreEqual("I play games", Justifier.Justify("I play games", 12));
+            Assert.AreEqual("I came here to see you", Justifier.Justify("I came here to see you", 22));
+            Assert.AreEqual("Java was invented by Sun", Justifier.Justify("Java was invented by Sun", 24));
         }
 
         [Test]
         public void TestOneWord()
         {
-            Assert.AreEqual(Justifier.Justify("I", 9), "I        ");
-            Assert.AreEqual(Justifier.Justify("Like", 6), "Like  ");
-            Assert.AreEqual(Justifier.Justify("CSharp", 6), "CSharp");
+            Assert.AreEqual("I        ", Justifier.Justify("I", 9));
+            Assert.AreEqual("Like  ", Justifier.Justify("Like", 6));
+            Assert.AreEqual("CSharp", Justifier.Justify("CSharp", 6));
         }
 
         [Test]
         public void TestSameNumberOfSpaces()
         {
-            Assert.AreEqual(Justifier.Justify("a b c", 7), "a  b  c");
-            Assert.AreEqual(Justifier.Justify("a b c", 9), "a   b   c");
-            Assert.AreEqual(Justifier.Justify("I play games", 14), "I  play  games");
+            Assert.AreEqual("a  b  c", Justifier.Justify("a b c", 7));
+            Assert.AreEqual("a   b   c", Justifier.Justify("a b c", 9));
+            Assert.AreEqual("I  play  games", Justifier.Justify("I play games", 14));
         }
 
         [Test]
         public void TestDifferentNumberOfSpaces()
         {
-            Assert.AreEqual(Justifier.Justify("a b c", 6), "a  b c");
-            Assert.AreEqual(Justifier.Justify("I play games", 15), "I   play  games");
-            Assert.AreEqual(Justifier.Justify("I do not play", 17), "I   do  not  play");
+            Assert.AreEqual("a  b c", Justifier.Justify("a b c", 6));
+            Assert.AreEqual("I   play  games", Justifier.Justify("I play games", 15));
+            Assert.AreEqual("I   do   not  play", Justifier.Justify("I do not play", 18));
         }
 
         private Justifier Justifier { get; set; }
