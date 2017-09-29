@@ -18,9 +18,9 @@
  
  Дополнительные условия:
  - текст слишком большой, требуется его разбиение на подстроки
-   *   пример: "I  don't  like/nblack   coffee", при длине строки в 14 символов
+   *   пример: "I  don't  like\nblack   coffee", при длине строки в 14 символов
  
  Пример использования:
- ``` var result = new Justifier.Justify("I don't like black coffee", 14); ```
+ var result = new Justifier.Justify("I don't like black coffee", 14);
  
  для проверки решения можно использовать тесты или консольное приложение.
